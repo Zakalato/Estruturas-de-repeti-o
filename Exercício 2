@@ -1,0 +1,31 @@
+package Lista1;
+
+import java.util.Scanner;
+
+public class Exercicio_2 {
+
+	public static void main(String[] args) {
+    
+    Scanner s = new Scanner(System.in);
+    
+    int neg = 0;
+    
+    for (int i = 1; i <= 5; i++) {
+    	
+    	System.out.println("Infome o valor " + i);
+    	int num =s.nextInt();
+    	
+    	if (num < 0) {
+    	    neg++;
+    	    //Isso é opcional, é apenas para mostrar que o número é negativo :)
+    	    System.out.println("Número negativo: " + num);
+    	}
+    	
+    	}
+    		
+    		System.out.println("Quantidadde de negativos: " + neg );
+    
+	}
+
+}
+
