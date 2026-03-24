@@ -1,0 +1,42 @@
+package Lista1;
+
+import java.util.Scanner;
+
+public class Exercicio_3abc {
+
+	public static void main(String[] args) {
+
+		Scanner s = new Scanner(System.in);
+
+		int num;
+		int totalpositivos = 0;
+		int somapositivos = 0;
+		int contNeg = 0;
+		int contInt = 0;
+
+		for (int i = 1; i <= 10; i++) {
+
+			System.out.println("Digite seu " + i + "° valor");
+			num = s.nextInt();
+
+			if (num > 0) {
+				somapositivos += num;
+				totalpositivos++;
+				if (num >= 5 && num <=50);
+				contInt++;
+			}
+			else if (num < 0);
+			contNeg++;
+		}
+
+		if (totalpositivos > 0) {
+			double media = somapositivos / totalpositivos;
+			System.out.println("A média de números positivos é: " + media);
+			System.out.println("Quantidade de número negativos:" + contNeg);
+			System.out.println("Quantidade de número no intervalo de 5..50:");
+		}
+
+
+	}
+
+}
