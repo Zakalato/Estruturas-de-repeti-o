@@ -14,7 +14,8 @@ public class Exercicio_4 {
 		int maiorValor = 0;
 		int menorValor = 0;
 
-		for (int i = 1; i <= 3; i++) {
+		for (int i = 1; i <= 10; i++) {
+			System.out.println("Digite o " + i + "° valor");
 			int valor = s.nextInt();
 
 			somapositivo = somapositivo + valor;
