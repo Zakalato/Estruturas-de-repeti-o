@@ -1,0 +1,37 @@
+package Lista1;
+
+import java.util.Scanner;
+
+public class Exercicio_7 {
+
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		
+		int valor = 0;
+		int positivos = 0;
+		int negativos = 0;
+		
+		
+		for (int i = 1; i <= 20; i++) {
+		System.out.println("Digite seu " + i +  "° número");
+        valor = s.nextInt();
+        
+        if (valor >= 0) {
+            positivos++;
+        } else {
+            negativos++;
+            
+        }
+    }
+        
+		double percPos = (positivos * 100.0) / 20;
+		double percNeg = (negativos * 100.0) / 20;
+		
+		System.out.println("Positivos: " + percPos + "%");
+		System.out.println("Negativos: " + percNeg + "%");
+        
+		}
+        
+	}
+
+
