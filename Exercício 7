@@ -2,36 +2,45 @@ package Lista1;
 
 import java.util.Scanner;
 
-public class Exercicio_7 {
+public class Exercicio_5 {
 
 	public static void main(String[] args) {
+
 		Scanner s = new Scanner(System.in);
-		
-		int valor = 0;
-		int positivos = 0;
-		int negativos = 0;
-		
-		
-		for (int i = 1; i <= 20; i++) {
-		System.out.println("Digite seu " + i +  "° número");
-        valor = s.nextInt();
-        
-        if (valor >= 0) {
-            positivos++;
-        } else {
-            negativos++;
-            
-        }
-    }
-        
-		double percPos = (positivos * 100.0) / 20;
-		double percNeg = (negativos * 100.0) / 20;
-		
-		System.out.println("Positivos: " + percPos + "%");
-		System.out.println("Negativos: " + percNeg + "%");
-        
+
+		int valor;
+		int primos = 0;
+
+		for (int i = 1; i <= 5; i++) {
+
+			System.out.println("Digite o " + i + "º valor:");
+			valor = s.nextInt();
+
+			int divisores = 0;
+
+			if (valor > 1) {
+
+				for (int j = 2; j < valor; j++) {
+					if (valor % j == 0) {
+						divisores++;
+					}
+				}
+
+				if (divisores == 0) {
+					System.out.println("Número primo!");
+					primos++;
+				} else {
+					System.out.println("Não é primo.");
+				}
+
+			}
+			
 		}
-        
+	
+
+		System.out.println("Quantidade de números primos: " + primos);
+	
+		
 	}
-
-
+	
+}
