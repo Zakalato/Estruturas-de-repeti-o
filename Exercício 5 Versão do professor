@@ -1,0 +1,45 @@
+package Lista1;
+
+import java.util.Scanner;
+
+public class Exercicio_5 {
+
+	public static void main(String[] args) {
+
+		Scanner s = new Scanner(System.in);
+
+		int valor;
+		int primos = 0;
+
+		for (int i = 1; i <= 5; i++) {
+
+			System.out.println("Digite o " + i + "º valor:");
+			valor = s.nextInt();
+
+
+			if (valor > 1) {
+				
+              boolean ehprimo = valor >= 2;
+              
+				for (int j = 2; j < valor; j++) {
+					if (valor % j == 0) {
+						ehprimo = false;
+						break;
+						
+					}
+				}
+
+				if (ehprimo == true) {
+					primos++; }
+		
+			}
+			
+		}
+	
+
+		System.out.println("Quantidade de números primos: " + primos);
+	
+		
+	}
+	
+}
