@@ -1,0 +1,28 @@
+package Lista1;
+
+import java.util.Scanner;
+
+public class Exercicio_6 {
+
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		
+		
+		
+		System.out.println("Digite seu valor para calcular seu fatorial");
+		
+		int valor = s.nextInt();
+		int fatorial = valor;
+
+		for (int i = valor - 1; i >= 1; i--) {
+		    System.out.println(fatorial + " * " + i + " = " + (fatorial * i));
+		    fatorial = fatorial * i;
+		}
+		System.out.println("Resultado final de " + valor + "! = " + fatorial );
+		
+		}
+        
+	}
+
+
+// Código com ajuda de Giovani :) 
