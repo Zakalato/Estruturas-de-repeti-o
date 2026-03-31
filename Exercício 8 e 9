@@ -61,5 +61,6 @@
         double perc = (contexe / 5.0) * 100;
         System.out.println("Percentual de alunos exemplares: " + df.format(perc) + "%");
 
+       //Opicional
         s.close();
     }
