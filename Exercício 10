@@ -1,0 +1,111 @@
+package Lista1;
+
+import java.util.Scanner;
+
+public class Exercicio_1_0 {
+
+    public static void main(String[] args) {
+
+        Scanner s = new Scanner(System.in);
+
+        int totalComercio = 0, totalIndustria = 0;
+        int aptosComercio = 0, aptosIndustria = 0;
+        int inaptosComercio = 0, inaptosIndustria = 0;
+
+        //Se quiser testar sugiro colocar so 3 nesse i = 30, É MUITA GENTE.
+        for (int i = 1; i <= 30; i++) {
+
+            System.out.println("Candidato " + i);
+
+            System.out.println("Área (1-Comércio / 2-Indústria):");
+            int area = s.nextInt();
+
+            System.out.println("Tempo de residência (anos):");
+            int residencia = s.nextInt();
+
+            System.out.println("Tem ensino médio? (1-sim / 0-não):");
+            int medio = s.nextInt();
+
+            System.out.println("Tem ensino superior? (1-sim / 0-não):");
+            int superior = s.nextInt();
+
+            System.out.println("Tem experiência? (1-sim / 0-não):");
+            int exp = s.nextInt();
+
+            //  COMÉRCIO
+            if (area == 1) {
+
+                totalComercio++;
+
+                if (residencia < 1) {
+                    System.out.println("Candidato inapto: precisa de 1 ano de residência");
+                    inaptosComercio++;
+                }
+                else if (medio == 0) {
+                    System.out.println("Candidato inapto: precisa de ensino médio");
+                    inaptosComercio++;
+                }
+                else if (exp == 0) {
+                    System.out.println("Candidato inapto: precisa de experiência");
+                    inaptosComercio++;
+                }
+                else {
+                    System.out.println("Candidato apto");
+                    aptosComercio++;
+                }
+            }
+
+            // INDÚSTRIA 
+            else if (area == 2) {
+
+                totalIndustria++;
+
+                System.out.println("Cargo (1-Operacional / 2-Gerência):");
+                int cargo = s.nextInt();
+
+                if (cargo == 1) {
+
+                    if (medio == 0) {
+                        System.out.println("Candidato inapto: precisa de ensino médio");
+                        inaptosIndustria++;
+                    } else {
+                        System.out.println("Candidato apto");
+                        aptosIndustria++;
+                    }
+
+                } else {
+
+                    if (superior == 0) {
+                        System.out.println("Candidato inapto: precisa de ensino superior");
+                        inaptosIndustria++;
+                    }
+                    else if (exp == 0) {
+                        System.out.println("Candidato inapto: precisa de experiência");
+                        inaptosIndustria++;
+                    }
+                    else {
+                        System.out.println("Candidato apto");
+                        aptosIndustria++;
+                    }
+                }
+            }
+        }
+
+        // RESULTADOS FINAIS
+
+        System.out.println("RESULTADOS: ");
+
+        System.out.println("Total comércio: " + totalComercio);
+        System.out.println("Aptos comércio: " + aptosComercio);
+
+        System.out.println("Total indústria: " + totalIndustria);
+        System.out.println("Aptos indústria: " + aptosIndustria);
+
+        double percInaptoCom = (totalComercio > 0) ? (inaptosComercio * 100.0 / totalComercio) : 0;
+        double percInaptoInd = (totalIndustria > 0) ? (inaptosIndustria * 100.0 / totalIndustria) : 0;
+
+        System.out.println("Percentual inaptos comércio: " + percInaptoCom + "%");
+        System.out.println("Percentual inaptos indústria: " + percInaptoInd + "%");
+
+        s.close();
+    }
