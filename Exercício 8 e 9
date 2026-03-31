@@ -1,0 +1,65 @@
+
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        DecimalFormat df = new DecimalFormat("##0.0");
+
+        int contbom = 0;
+        int contexe = 0;
+
+        for (int i = 1; i <= 5; i++) {
+
+            System.out.println("Aluno " + i);
+
+            double sm = 0;
+            int cont10 = 0;
+            String msg = "";
+            String notas10 = "";
+
+            // FOR DOS BIMESTRES 
+            for (int x = 1; x <= 4; x++) {
+
+                System.out.println("Informe a média do " + x + "º bimestre:");
+                double md = s.nextDouble();
+
+                sm += md;
+
+                if (md == 10) {
+                    cont10++;
+                    msg += " " + x;
+                    notas10 += " 10.0";
+                }
+            }
+
+            double ma = sm / 4;
+            System.out.println("Média anual: " + df.format(ma));
+
+            
+            if (ma >= 9 && cont10 >= 2) {
+                System.out.println("ALUNO EXEMPLAR!");
+                System.out.println("Bimestres com média 10:" + msg);
+                System.out.println("Notas 10 encontradas:" + notas10);
+                contexe++;
+            }
+            else if (ma >= 9) {
+                System.out.println("Honras pelo excelente aproveitamento");
+            }
+            else if (ma >= 8) {
+                System.out.println("Honras pelo ótimo aproveitamento");
+            }
+            else if (ma >= 7) {
+                System.out.println("Honras pelo bom aproveitamento");
+                contbom++;
+            }
+            else {
+                System.out.println("Sem honras");
+            }
+        }
+
+        System.out.println("Quantidade de honras pelo bom aproveitamento: " + contbom);
+
+        double perc = (contexe / 5.0) * 100;
+        System.out.println("Percentual de alunos exemplares: " + df.format(perc) + "%");
+
+        s.close();
+    }
